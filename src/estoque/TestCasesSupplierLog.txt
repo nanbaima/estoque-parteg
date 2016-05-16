@@ -1,0 +1,74 @@
+### Test Case Generation Statistics
+### Test Goal Satisfaction
+ - defined 13 test goals
+ - satisfied 13 test goals (100.0 %)
+
+### unsatisfied test goals
+
+
+### satisfied test goals
+
+ - satisfied: (test goal #1 - traversed transition) 
+   from node StateMachine1::Region1::SavingRegister
+   to node tmp3
+   triggered by default
+   with condition truth: true
+((valid = true))
+ - satisfied: (test goal #2 - traversed transition) 
+   from node StateMachine1::Region1::SavingRegister
+   to node tmp2
+   triggered by default
+   with condition truth: true
+((valid = false))
+ - satisfied: (test goal #3 - traversed transition) 
+   from node StateMachine1::Region1::DoDelete
+   to node StateMachine1::Region1::DeletedS
+   triggered by default
+   with condition truth: true
+((valid = true))
+ - satisfied: (test goal #4 - traversed transition) 
+   from node StateMachine1::Region1::DoDelete
+   to node StateMachine1::Region1::NotDeletedS
+   triggered by default
+   with condition truth: true
+((valid = false))
+ - satisfied: (test goal #5 - traversed transition) 
+   from node StateMachine1::Region1::SavingUpdate
+   to node StateMachine1::Region1::UpdatedS
+   triggered by default
+   with condition truth: true
+((valid = true))
+ - satisfied: (test goal #6 - traversed transition) 
+   from node StateMachine1::Region1::SavingUpdate
+   to node StateMachine1::Region1::NotUpdatedS
+   triggered by default
+   with condition truth: true
+((valid = false))
+ - satisfied: (test goal #7 - traversed transition) 
+   from node StateMachine1::Region1::RegisteringS
+   to node tmp4
+   triggered by submitEv
+ - satisfied: (test goal #8 - traversed transition) 
+   from node StateMachine1::Region1::DeletingS
+   to node tmp6
+   triggered by submitEv
+ - satisfied: (test goal #9 - traversed transition) 
+   from node StateMachine1::Region1::UpdatingS
+   to node tmp5
+   triggered by submitEv
+ - satisfied: (test goal #10 - traversed transition) 
+   from node StateMachine1::Region1::idle
+   to node StateMachine1::Region1::DeletingS
+   triggered by startDeleteEv
+ - satisfied: (test goal #11 - traversed transition) 
+   from node StateMachine1::Region1::idle
+   to node tmp1
+   triggered by startRegisterEv
+ - satisfied: (test goal #12 - traversed transition) 
+   from node StateMachine1::Region1::idle
+   to node StateMachine1::Region1::UpdatingS
+   triggered by startUpdateEv
+ - satisfied: (test goal #13 - traversed transition) 
+   from node StateMachine1::Region1::Init
+   to node StateMachine1::Region1::idle
+   triggered by default
