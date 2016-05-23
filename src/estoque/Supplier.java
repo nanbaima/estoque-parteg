@@ -51,8 +51,6 @@ public class Supplier {
 	@Size(min=1, max=255)
 	private String obs;
 	
-	public Boolean valid;
-
 	public Supplier() {
 		id=1;
 	}
@@ -237,19 +235,5 @@ public class Supplier {
 	public void setObs(String obs) {
 		this.obs = obs;
 	}
-
-	/**
-	 * @return the valid
-	 */
-	public Boolean getValid() {
-		return valid;
-	}
-
-	/**
-	 * @param valid the valid to set
-	 */
-	public void setValid(Boolean valid) {
-		this.valid = valid;
-	}	
 
 }

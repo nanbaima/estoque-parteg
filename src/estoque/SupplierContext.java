@@ -6,6 +6,8 @@ import io.github.benas.randombeans.api.EnhancedRandom;
 public class SupplierContext extends java.lang.Object implements java.lang.Cloneable {
 
 	public SupplierState state;
+	public boolean valid;
+	public Integer qtddRegistro = 0;
 	public Supplier supplier;
 	private IAdapterSupplier adapter;
 
@@ -64,8 +66,7 @@ public class SupplierContext extends java.lang.Object implements java.lang.Clone
 		case registering:
 
 			if (eventName.compareTo("submitEv") == 0) {
-				Supplier objParam = (Supplier) objects[1];
-				boolean valid = objParam.getValid();
+				valid = (Boolean) objects[1];
 
 				/*Gera objeto válido*/
 				Supplier supplier = generateEntity();
@@ -90,8 +91,7 @@ public class SupplierContext extends java.lang.Object implements java.lang.Clone
 		case updating:
 
 			if (eventName.compareTo("submitEv") == 0) {
-				Supplier objParam = (Supplier) objects[1];
-				boolean valid = objParam.getValid();
+				valid = (Boolean) objects[1];
 
 				/*Gera objeto válido*/
 				Supplier supplier = generateEntity();
@@ -116,8 +116,7 @@ public class SupplierContext extends java.lang.Object implements java.lang.Clone
 		case deleting:
 			
 			if (eventName.compareTo("submitEv") == 0) {
-				Supplier objParam = (Supplier) objects[1];
-				boolean valid = objParam.getValid();
+				valid = (Boolean) objects[1];
 				
 				boolean success = adapter.submitDelete(valid);
 				
