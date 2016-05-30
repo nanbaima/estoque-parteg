@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_vPKVoBnSEeaiT96kmW8JAg" name="">
+  <packageImport xmi:id="_v0xkIBnSEeaiT96kmW8JAg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_Wk17gBnTEeaiT96kmW8JAg" name="client">
+    <packagedElement xmi:type="uml:Class" xmi:id="_bLGU8BnTEeaiT96kmW8JAg" name="ClientContext">
+      <ownedAttribute xmi:id="_q8AIQBnbEeaiT96kmW8JAg" name="state" type="_tdGMABnbEeaiT96kmW8JAg"/>
+      <ownedAttribute xmi:id="_28CRIBrXEeab549I1xqGTA" name="sup" type="_6LMUwBrXEeab549I1xqGTA"/>
+      <ownedAttribute xmi:id="_0N2xUCEyEea6MNoNlifn1Q" name="valid">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_cBn6ACE2Eea4gr_H0a5rWg" value="true"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_F-UI8CE4Eea4gr_H0a5rWg" name="qtddRegistro">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_KcouYCE4Eea4gr_H0a5rWg"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_vZeIMBnSEeaiT96kmW8JAg" name="StateMachineSupplier" visibility="public">
+        <region xmi:id="_vgMbQBnSEeaiT96kmW8JAg" name="Region1">
+          <transition xmi:id="_ukoVcBnTEeaiT96kmW8JAg" name="init2idle" source="_rgen8BnTEeaiT96kmW8JAg" target="_nNcFcBnTEeaiT96kmW8JAg"/>
+          <transition xmi:id="_H-aLsBnVEeaiT96kmW8JAg" name="startRegister" source="_nNcFcBnTEeaiT96kmW8JAg" target="_7ivxsBnTEeaiT96kmW8JAg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_JW9ckBnhEeaiT96kmW8JAg" specification="_UOSXABnXEeaiT96kmW8JAg"/>
+            <trigger xmi:id="_WLo0gBnXEeaiT96kmW8JAg" event="_VwOq4BnXEeaiT96kmW8JAg"/>
+          </transition>
+          <transition xmi:id="_JTS7ABnVEeaiT96kmW8JAg" name="startUpdate" guard="_ixEJUCE9Eea4gr_H0a5rWg" source="_nNcFcBnTEeaiT96kmW8JAg" target="_aJppkBnUEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_ixEJUCE9Eea4gr_H0a5rWg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_jeXUMCE9Eea4gr_H0a5rWg" value="qtddRegistro >= 1"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_rh5XABsBEeaibPr5BttDJA" specification="_7tqVUBngEeaiT96kmW8JAg"/>
+            <trigger xmi:id="_8R0yUBngEeaiT96kmW8JAg" event="_8GTe0BngEeaiT96kmW8JAg"/>
+          </transition>
+          <transition xmi:id="_f1bEIBnVEeaiT96kmW8JAg" name="savingS2notUpdatedS" guard="_c0pIIBrwEeaZ5pVz-5psig" source="_sS7tABruEeaZ5pVz-5psig" target="_gWlF4BnUEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_c0pIIBrwEeaZ5pVz-5psig">
+              <specification xmi:type="uml:LiteralString" xmi:id="_dhMsIBrwEeaZ5pVz-5psig" value="valid = false"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_gcZkkBnVEeaiT96kmW8JAg" name="savingS2updatedS" guard="_eeuEUBrwEeaZ5pVz-5psig" source="_sS7tABruEeaZ5pVz-5psig" target="_e2OtcBnUEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_eeuEUBrwEeaZ5pVz-5psig">
+              <specification xmi:type="uml:LiteralString" xmi:id="_fBYFcBrwEeaZ5pVz-5psig" value="valid = true"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_i4KcYBnVEeaiT96kmW8JAg" name="startDelete" guard="_-mCT0CE3Eea4gr_H0a5rWg" source="_nNcFcBnTEeaiT96kmW8JAg" target="_uafskBnUEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_-mCT0CE3Eea4gr_H0a5rWg">
+              <specification xmi:type="uml:LiteralString" xmi:id="__ur98CE3Eea4gr_H0a5rWg" value="qtddRegistro >= 1"/>
+            </ownedRule>
+            <trigger xmi:id="_D9BjcBnhEeaiT96kmW8JAg" event="_DOTcQBnhEeaiT96kmW8JAg"/>
+          </transition>
+          <transition xmi:id="_1TWlUBnVEeaiT96kmW8JAg" name="savingS2notRegisteredS" guard="_iK6EMBraEeab549I1xqGTA" source="_NY1i4BprEeaszI49GHRmtw" target="_FmJwUBnUEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_iK6EMBraEeab549I1xqGTA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_i6kmkBraEeab549I1xqGTA" value="valid = false"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="__XUPQBpyEeaszI49GHRmtw" specification="_4oBQQBpzEeaszI49GHRmtw"/>
+          </transition>
+          <transition xmi:id="_2Jcf0BnVEeaiT96kmW8JAg" name="savingS2registeredS" guard="_kplGEBraEeab549I1xqGTA" source="_NY1i4BprEeaszI49GHRmtw" target="_AqdSYBnUEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_kplGEBraEeab549I1xqGTA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_mIFrcBraEeab549I1xqGTA" value="(valid =true)"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_MIjeYBp5EeabPr9XwoH1ow" specification="_A_h7gBp5EeabPr9XwoH1ow"/>
+          </transition>
+          <transition xmi:id="_4wpLkBnVEeaiT96kmW8JAg" name="doDeleteS2deletedS" guard="_jFxvABrwEeaZ5pVz-5psig" source="_TGO-kBrvEeaZ5pVz-5psig" target="_1M5NcBnUEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_jFxvABrwEeaZ5pVz-5psig">
+              <specification xmi:type="uml:LiteralString" xmi:id="_k-zGIBrwEeaZ5pVz-5psig" value="valid = true"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_Y2zVECE8Eea4gr_H0a5rWg" specification="_YhB5YCE8Eea4gr_H0a5rWg"/>
+          </transition>
+          <transition xmi:id="_5-qd4BnVEeaiT96kmW8JAg" name="doDeleteS2notDeletedS" guard="_oETegBrwEeaZ5pVz-5psig" source="_TGO-kBrvEeaZ5pVz-5psig" target="_2VaUsBnUEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_oETegBrwEeaZ5pVz-5psig">
+              <specification xmi:type="uml:LiteralString" xmi:id="_ovvoMBrwEeaZ5pVz-5psig" value="valid = false"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_dVRrgCE8Eea4gr_H0a5rWg" specification="_dHa1sCE8Eea4gr_H0a5rWg"/>
+          </transition>
+          <transition xmi:id="_bscLYBprEeaszI49GHRmtw" name="registeringS2savingRegister" source="_7ivxsBnTEeaiT96kmW8JAg" target="_NY1i4BprEeaszI49GHRmtw">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_dxg5IBp5EeabPr9XwoH1ow" specification="_uuVm4BnaEeaiT96kmW8JAg" language="" body=""/>
+            <trigger xmi:id="_DgrVgBpsEeaszI49GHRmtw" event="_laQMYBnaEeaiT96kmW8JAg"/>
+          </transition>
+          <transition xmi:id="__mxVMBruEeaZ5pVz-5psig" name="updatingS2savingUpdate" source="_aJppkBnUEeaiT96kmW8JAg" target="_sS7tABruEeaZ5pVz-5psig">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_IlT9gBrvEeaZ5pVz-5psig" specification="_uuVm4BnaEeaiT96kmW8JAg"/>
+            <trigger xmi:id="_Gfti8BrvEeaZ5pVz-5psig" event="_laQMYBnaEeaiT96kmW8JAg"/>
+          </transition>
+          <transition xmi:id="_b6K5YBrvEeaZ5pVz-5psig" name="deletingS2doDelete" source="_uafskBnUEeaiT96kmW8JAg" target="_TGO-kBrvEeaZ5pVz-5psig">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_GtS2gBrwEeaZ5pVz-5psig" specification="_uuVm4BnaEeaiT96kmW8JAg"/>
+            <trigger xmi:id="_l2yTgBrvEeaZ5pVz-5psig" event="_laQMYBnaEeaiT96kmW8JAg"/>
+          </transition>
+          <transition xmi:id="_hxwasCE4Eea4gr_H0a5rWg" name="registeredS2idle" source="_AqdSYBnUEeaiT96kmW8JAg" target="_nNcFcBnTEeaiT96kmW8JAg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_g-56ECE7Eea4gr_H0a5rWg" specification="_c-4aMCE7Eea4gr_H0a5rWg"/>
+            <trigger xmi:id="_dtOG4CE7Eea4gr_H0a5rWg" event="_dSZzICE7Eea4gr_H0a5rWg"/>
+          </transition>
+          <transition xmi:id="_x2cJ0CE5Eea4gr_H0a5rWg" name="notRegisteredS2idle" source="_FmJwUBnUEeaiT96kmW8JAg" target="_nNcFcBnTEeaiT96kmW8JAg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_M35vkCE7Eea4gr_H0a5rWg" specification="_Ea3uUCE6Eea4gr_H0a5rWg"/>
+            <trigger xmi:id="_GYjjACE6Eea4gr_H0a5rWg" event="_Ex9_sCE6Eea4gr_H0a5rWg"/>
+          </transition>
+          <transition xmi:id="_O3QNoCE6Eea4gr_H0a5rWg" name="notUpdatedS2idle" source="_gWlF4BnUEeaiT96kmW8JAg" target="_nNcFcBnTEeaiT96kmW8JAg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_RG-YECE7Eea4gr_H0a5rWg" specification="_Ea3uUCE6Eea4gr_H0a5rWg"/>
+            <trigger xmi:id="_cr2l8CE6Eea4gr_H0a5rWg" event="_Ex9_sCE6Eea4gr_H0a5rWg"/>
+          </transition>
+          <transition xmi:id="_nprlcCE6Eea4gr_H0a5rWg" name="updatedS2idle" visibility="public" source="_e2OtcBnUEeaiT96kmW8JAg" target="_nNcFcBnTEeaiT96kmW8JAg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_lB-G4CE7Eea4gr_H0a5rWg" specification="_c-4aMCE7Eea4gr_H0a5rWg"/>
+            <trigger xmi:id="_kB370CE7Eea4gr_H0a5rWg" event="_dSZzICE7Eea4gr_H0a5rWg"/>
+          </transition>
+          <transition xmi:id="_v5TK4CE9Eea4gr_H0a5rWg" name="deletedS2idle" visibility="package" source="_1M5NcBnUEeaiT96kmW8JAg" target="_nNcFcBnTEeaiT96kmW8JAg">
+            <trigger xmi:id="_R6oiQCE-Eea4gr_H0a5rWg" event="_dSZzICE7Eea4gr_H0a5rWg"/>
+          </transition>
+          <transition xmi:id="_Aslh4CE-Eea4gr_H0a5rWg" name="notDeletedS2idle" visibility="public" source="_2VaUsBnUEeaiT96kmW8JAg" target="_nNcFcBnTEeaiT96kmW8JAg">
+            <trigger xmi:id="_PQOxgCE-Eea4gr_H0a5rWg" event="_dSZzICE7Eea4gr_H0a5rWg"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_rgen8BnTEeaiT96kmW8JAg" name="Init"/>
+          <subvertex xmi:type="uml:State" xmi:id="_nNcFcBnTEeaiT96kmW8JAg" name="idle" visibility="public" stateInvariant="_URXDsBnYEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_URXDsBnYEeaiT96kmW8JAg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_URXDsRnYEeaiT96kmW8JAg" name="" value="state = ClientState::idle"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_7ivxsBnTEeaiT96kmW8JAg" name="RegisteringS" stateInvariant="_8TDbABnYEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_8TDbABnYEeaiT96kmW8JAg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_8TDbARnYEeaiT96kmW8JAg" value="state = ClientState::registering"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_AqdSYBnUEeaiT96kmW8JAg" name="RegisteredS" stateInvariant="_LxxLwBnZEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_LxxLwBnZEeaiT96kmW8JAg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_LxxLwRnZEeaiT96kmW8JAg" value="(state = ClientState::registered)"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_FmJwUBnUEeaiT96kmW8JAg" name="NotRegisteredS" stateInvariant="_FxNXgBnZEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_FxNXgBnZEeaiT96kmW8JAg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_FxNXgRnZEeaiT96kmW8JAg" value="(state = ClientState::notRegistered)"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_aJppkBnUEeaiT96kmW8JAg" name="UpdatingS" visibility="public" stateInvariant="_jZe5YBnYEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_jZe5YBnYEeaiT96kmW8JAg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_jZe5YRnYEeaiT96kmW8JAg" value="state = ClientState::updating"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_e2OtcBnUEeaiT96kmW8JAg" name="UpdatedS" stateInvariant="_e_sZMBnZEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_e_sZMBnZEeaiT96kmW8JAg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_e_sZMRnZEeaiT96kmW8JAg" value="state = ClientState::updated"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_gWlF4BnUEeaiT96kmW8JAg" name="NotUpdatedS" stateInvariant="_YoHMEBnZEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_YoHMEBnZEeaiT96kmW8JAg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_YoHMERnZEeaiT96kmW8JAg" value="state = ClientState::notUpdated"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_uafskBnUEeaiT96kmW8JAg" name="DeletingS" stateInvariant="_pH50wBnYEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_pH50wBnYEeaiT96kmW8JAg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_pH50wRnYEeaiT96kmW8JAg" value="state = ClientState::deleting"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_1M5NcBnUEeaiT96kmW8JAg" name="DeletedS" stateInvariant="_oEdlUBnZEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_oEdlUBnZEeaiT96kmW8JAg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_oEdlURnZEeaiT96kmW8JAg" value="(state = ClientState::deleted)"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_2VaUsBnUEeaiT96kmW8JAg" name="NotDeletedS" stateInvariant="_sStucBnZEeaiT96kmW8JAg">
+            <ownedRule xmi:id="_sStucBnZEeaiT96kmW8JAg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_sStucRnZEeaiT96kmW8JAg" value="state = ClientState::notDeleted"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_NY1i4BprEeaszI49GHRmtw" name="SavingRegister" stateInvariant="_ns0XkBpsEeaszI49GHRmtw">
+            <ownedRule xmi:id="_ns0XkBpsEeaszI49GHRmtw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_ns0XkRpsEeaszI49GHRmtw" value="state = ClientState::savingRegister"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_sS7tABruEeaZ5pVz-5psig" name="SavingUpdate" stateInvariant="_vv3F4Br5EeaibPr5BttDJA">
+            <ownedRule xmi:id="_vv3F4Br5EeaibPr5BttDJA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_wlEPkBr5EeaibPr5BttDJA" value="state = ClientState::savingUpdate"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_TGO-kBrvEeaZ5pVz-5psig" name="DoDelete" stateInvariant="_23zY8Br5EeaibPr5BttDJA">
+            <ownedRule xmi:id="_23zY8Br5EeaibPr5BttDJA" name="">
+              <specification xmi:type="uml:LiteralString" xmi:id="_4Jb_8Br5EeaibPr5BttDJA" value="state = ClientState::doDelete"/>
+            </ownedRule>
+          </subvertex>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_UOSXABnXEeaiT96kmW8JAg" name="startRegister" method="_JW9ckBnhEeaiT96kmW8JAg"/>
+      <ownedOperation xmi:id="_uuVm4BnaEeaiT96kmW8JAg" name="submit" method="_dxg5IBp5EeabPr9XwoH1ow _IlT9gBrvEeaZ5pVz-5psig _GtS2gBrwEeaZ5pVz-5psig" postcondition="_Ng-_ABp7EeabPr9XwoH1ow">
+        <ownedRule xmi:id="_Ng-_ABp7EeabPr9XwoH1ow">
+          <specification xmi:type="uml:LiteralString" xmi:id="_OJAoUBp7EeabPr9XwoH1ow" value="(valid = validParam)"/>
+        </ownedRule>
+        <ownedParameter xmi:id="_pHSskCEyEea6MNoNlifn1Q" name="validParam">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_7tqVUBngEeaiT96kmW8JAg" name="startUpdate" method="_rh5XABsBEeaibPr5BttDJA"/>
+      <ownedOperation xmi:id="_CiyaEBnhEeaiT96kmW8JAg" name="startDelete"/>
+      <ownedOperation xmi:id="_4oBQQBpzEeaszI49GHRmtw" name="notRegistered" method="__XUPQBpyEeaszI49GHRmtw"/>
+      <ownedOperation xmi:id="_A_h7gBp5EeabPr9XwoH1ow" name="registered" method="_MIjeYBp5EeabPr9XwoH1ow" postcondition="_K2SAoCE8Eea4gr_H0a5rWg">
+        <ownedRule xmi:id="_K2SAoCE8Eea4gr_H0a5rWg">
+          <specification xmi:type="uml:LiteralString" xmi:id="_MBRNECE8Eea4gr_H0a5rWg" value="(qtddRegistro = 1)"/>
+        </ownedRule>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Ea3uUCE6Eea4gr_H0a5rWg" name="clear" method="_M35vkCE7Eea4gr_H0a5rWg _RG-YECE7Eea4gr_H0a5rWg"/>
+      <ownedOperation xmi:id="_c-4aMCE7Eea4gr_H0a5rWg" name="back2idle" method="_g-56ECE7Eea4gr_H0a5rWg _lB-G4CE7Eea4gr_H0a5rWg"/>
+      <ownedOperation xmi:id="_YhB5YCE8Eea4gr_H0a5rWg" name="deleted" method="_Y2zVECE8Eea4gr_H0a5rWg" postcondition="_u9xMMCE8Eea4gr_H0a5rWg">
+        <ownedRule xmi:id="_u9xMMCE8Eea4gr_H0a5rWg">
+          <specification xmi:type="uml:LiteralString" xmi:id="_xAw-sCE8Eea4gr_H0a5rWg" value="(qtddRegistro = 0)"/>
+        </ownedRule>
+      </ownedOperation>
+      <ownedOperation xmi:id="_dHa1sCE8Eea4gr_H0a5rWg" name="notDeleted" method="_dVRrgCE8Eea4gr_H0a5rWg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_tdGMABnbEeaiT96kmW8JAg" name="ClientState">
+      <ownedLiteral xmi:id="_vQajwBnbEeaiT96kmW8JAg" name="idle"/>
+      <ownedLiteral xmi:id="_0_rzsBnbEeaiT96kmW8JAg" name="registering"/>
+      <ownedLiteral xmi:id="_259IABnbEeaiT96kmW8JAg" name="registered"/>
+      <ownedLiteral xmi:id="_5DZgwBnbEeaiT96kmW8JAg" name="notRegistered"/>
+      <ownedLiteral xmi:id="_7wtbkBnbEeaiT96kmW8JAg" name="updating"/>
+      <ownedLiteral xmi:id="_9dcqMBnbEeaiT96kmW8JAg" name="updated"/>
+      <ownedLiteral xmi:id="_-0U9kBnbEeaiT96kmW8JAg" name="notUpdated"/>
+      <ownedLiteral xmi:id="_AXSlIBncEeaiT96kmW8JAg" name="deleting"/>
+      <ownedLiteral xmi:id="_CSfGgBncEeaiT96kmW8JAg" name="deleted"/>
+      <ownedLiteral xmi:id="_EF_rgBncEeaiT96kmW8JAg" name="notDeleted"/>
+      <ownedLiteral xmi:id="_Vt0bYBpsEeaszI49GHRmtw" name="savingRegister"/>
+      <ownedLiteral xmi:id="_Kj_sMBr5EeaibPr5BttDJA" name="savingUpdate"/>
+      <ownedLiteral xmi:id="_P27lcBr5EeaibPr5BttDJA" name="doDelete"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_VwOq4BnXEeaiT96kmW8JAg" name="startRegisterEv" operation="_UOSXABnXEeaiT96kmW8JAg"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_8GTe0BngEeaiT96kmW8JAg" name="startUpdateEv" operation="_7tqVUBngEeaiT96kmW8JAg"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_DOTcQBnhEeaiT96kmW8JAg" name="startDeleteEv" operation="_CiyaEBnhEeaiT96kmW8JAg"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_laQMYBnaEeaiT96kmW8JAg" name="submitEv" operation="_uuVm4BnaEeaiT96kmW8JAg"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_6LMUwBrXEeab549I1xqGTA" name="Client">
+      <ownedAttribute xmi:id="_UGAeECKFEeapgeRON4J87g" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_2H_VsCKFEeapgeRON4J87g" name="type">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_N-q28CKGEeapgeRON4J87g" name="date">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ULVNgCKGEeapgeRON4J87g" name="gender">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_kydX0CKGEeapgeRON4J87g" name="phoneNumber">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_J2mY4CKHEeapgeRON4J87g" name="cellNumber">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_yUdHwCKHEeapgeRON4J87g" name="rg">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_CK8fUCKIEeapgeRON4J87g" name="cpf_cnpj">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_fb0YYCKIEeapgeRON4J87g" name="ie">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_jw9zsCKIEeapgeRON4J87g" name="address">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Wh5U4CKJEeapgeRON4J87g" name="neighborhood ">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_gphsMCKJEeapgeRON4J87g" name="city">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_uSrpgCKJEeapgeRON4J87g" name="state">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_36QnwCKJEeapgeRON4J87g" name="zipCode">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_F2WIICKKEeapgeRON4J87g" name="email">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_PpbLwCKKEeapgeRON4J87g" name="obs">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_Ex9_sCE6Eea4gr_H0a5rWg" name="clear" operation="_Ea3uUCE6Eea4gr_H0a5rWg"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_dSZzICE7Eea4gr_H0a5rWg" name="back2idle" operation="_c-4aMCE7Eea4gr_H0a5rWg"/>
+  </packagedElement>
+</uml:Model>
